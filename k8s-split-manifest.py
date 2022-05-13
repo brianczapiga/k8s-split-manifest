@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 # k8s-split-manifest by Brian Joseph Czapiga <brian@czapiga.com>
 
 # Usage:
@@ -41,7 +41,7 @@ def main():
 
   try:
     manifestFD = open(manifestFile, 'r')
-  except IOError, e:
+  except IOError as e:
     sys.stderr.write("ERROR: Error opening file [" + manifestFile + "]: " + str(e.strerror) + "\n")
     sys.exit(1)
     
