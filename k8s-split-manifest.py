@@ -30,6 +30,9 @@ def pushObject(objects, object):
   return True
 
 def main():
+  # https://github.com/yaml/pyyaml/issues/89#issuecomment-1124189214
+  yaml.Loader.yaml_implicit_resolvers.pop("=")
+
   if len(sys.argv) != 2:
     sys.stderr.write("Usage: " + sys.argv[0] + " [ manifest.yaml ]\n")
     sys.exit(1)
